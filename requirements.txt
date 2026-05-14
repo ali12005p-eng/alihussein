@@ -1,0 +1,10 @@
+aiogram>=3.0.0
+groq
+python-dotenv
+aiohttp
+pydantic
+pydantic-settings
+asyncio
+python-magic
+pillow
+requests
