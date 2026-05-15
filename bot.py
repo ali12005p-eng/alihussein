@@ -123,8 +123,10 @@ class AIBot:
                 await self.bot.send_chat_action(message.chat.id, "typing")
                 
                 user_input = text
-                if mentions_name: user_input = user_input.replace(BOT_NAME, "", 1).strip()
-                elif mentions_bot: user_input = user_input.replace("بوت", "", 1).strip()
+                if mentions_name:
+                    user_input = user_input.replace(BOT_NAME, "", 1).strip()
+                elif mentions_bot:
+                    user_input = user_input.replace("بوت", "", 1).strip()
                 
                 if not user_input and (mentions_name or mentions_bot):
                     await message.reply(f"نعم يا غالي، **{BOT_NAME}** معك! كيف يمكنني مساعدتك؟")
@@ -135,8 +137,13 @@ class AIBot:
                         messages=[
                             {
                                 "role": "system", 
-                                "content": f"أنت مساعد ذكي واسمك هو {BOT_NAME}. المطور الخاص بك هو {DEVELOPER_NAME} وحسابه {DEVELOPER_USER}. "
-                                           f"أجب بأسلوب فخم وذكي باللغة العربية."
+                                "content": (
+                                    f"أنت مساعد ذكي واسمك هو {BOT_NAME}. "
+                                    f"المطور الخاص بك هو {DEVELOPER_NAME} "
+                                    f"وحسابه الرسمي هو {DEVELOPER_USER} فقط لا غير. "
+                                    f"لا تغير اليوزر أو تحذف الشرطة السفلية أبداً. "
+                                    f"أجب بأسلوب فخم وذكي باللغة العربية."
+                                )
                             },
                             {"role": "user", "content": user_input}
                         ],
