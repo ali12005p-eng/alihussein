@@ -155,7 +155,7 @@ class AIBot:
 
         @self.dp.callback_query(F.data == "how_to_use")
         async def cb_help(callback: types.CallbackQuery):
-            await callback.message.answer(f"📖 **دليل استخدام {BOT_NAME}:**\n- في الخاص: أرسل أي سؤال مباشرة.\n- في المجموعات: ابدأ رسالتك بكلمة '{BOT_NAME}' أو 'بوت' أو رد على رسالتي.")
+            await callback.message.answer(f"📖 **دليل استخدام {BOT_NAME}:**\n- في الخاص: أرسل أي سؤال مباشرة.\n- في المجموعات: قم برفعي مشرف، ابدأ رسالتك بكلمة '{BOT_NAME}' أو 'بوت' أو رد على رسالتي.")
             await callback.answer()
 
         @self.dp.callback_query(F.data == "start_chat")
