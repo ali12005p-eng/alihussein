@@ -114,8 +114,8 @@ class AIBot:
                     dev_info = (
                         f"👤 **معلومات المطور:**\n\n"
                         f"مطور هذا البوت هو المبدع **{DEVELOPER_NAME}**.\n"
-                        f"يمكنك التواصل معه عبر حسابه الرسمي: {DEVELOPER_USER}\n"
-                        f"أو عبر الرابط: {DEVELOPER_LINK}"
+                        f"يمكنك التواصل معه عبر حسابه الرسمي: "@alw_sh313"\n"
+                        f"أو عبر الرابط: "https://t.me/alw_sh313"
                     )
                     await message.reply(dev_info, parse_mode="Markdown")
                     return
