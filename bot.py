@@ -105,18 +105,19 @@ class AIBot:
             is_reply_to_bot = message.reply_to_message and message.reply_to_message.from_user.id == (await self.bot.get_me()).id
             
             # التحقق إذا كان السؤال عن المطور
-            dev_keywords = ["مطور", "المطور", "صانعك", "من صنعك", "علي حسين", "صاحب البوت"]
-            is_asking_about_dev = any(word in text for word in dev_keywords)
+            dev_keywords = ["مطور", "المطور", "صانعك", "من صنعك", "علي حسين", "صاحب البوت", "@alwsh313", "@alw_sh313"]
+is_asking_about_dev = any(word in text.lower() for word in dev_keywords)
 
             if is_private or mentions_name or mentions_bot or is_reply_to_bot:
                 # إذا كان السؤال عن المطور، نرد مباشرة لتجنب أخطاء الـ AI
                 if is_asking_about_dev:
                     dev_info = (
-                        f"👤 **معلومات المطور:**\n\n"
-                        f"مطور هذا البوت هو المبدع **{DEVELOPER_NAME}**.\n"
-                        f"يمكنك التواصل معه عبر حسابه الرسمي: {DEVELOPER_USER}\n"
-                        f"أو عبر الرابط: {DEVELOPER_LINK}"
-                    )
+    "👤 **معلومات المطور:**\n\n"
+    "مطور هذا البوت هو المبدع **علي حسين**.\n"
+    "يوزر المطور الرسمي:\n"
+    "`@alw_sh313`\n\n"
+    f"الرابط الرسمي:\n{DEVELOPER_LINK}"
+)
                     await message.reply(dev_info, parse_mode="Markdown")
                     return
 
